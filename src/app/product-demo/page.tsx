@@ -1,24 +1,22 @@
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
-import HeroSection from "@/components/sections/HeroSection";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import ProductDemoSection from "@/components/sections/ProductDemoSection";
 import DashboardPreviewSection from "@/components/sections/DashboardPreviewSection";
-import AboutSection from "@/components/sections/AboutSection";
 import CTASection from "@/components/sections/CTASection";
 
-export default function Home() {
+export const metadata = {
+  title: "Product Demo - HawkEye",
+  description:
+    "See HawkEye surveillance technology in action with our interactive product demo.",
+};
+
+export default function ProductDemoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
       <Navbar />
-      <main className="flex-1">
-        <HeroSection />
-        <FeaturesSection />
-        <HowItWorksSection />
+      <main className="flex-1 pt-16">
         <ProductDemoSection />
         <DashboardPreviewSection />
-        <AboutSection />
         <CTASection />
       </main>
       <Footer />

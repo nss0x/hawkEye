@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 255 255 255;
+    --foreground: 17 24 39;
+    --accent: 37 99 235;
+    --accent-light: 59 130 246;
+    --card-bg: 243 244 246;
+    --border: 209 213 219;
+    --shadow: rgba(17, 24, 39, 0.1);
+  }
+
+  .dark {
+    --background: 17 24 39;
+    --foreground: 255 255 255;
+    --accent: 59 130 246;
+    --accent-light: 96 165 250;
+    --card-bg: 31 41 55;
+    --border: 55 65 81;
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    color: rgb(var(--foreground));
+    background: rgb(var(--background));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  * {
+    @apply border-[color:rgb(var(--border)/0.5)];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/30 dark:bg-black/30 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-lg;
+  }
+
+  .glass-sm {
+    @apply bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-md;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-primary {
+    @apply bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  /* Soft shadows */
+  .shadow-soft {
+    @apply shadow-md;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in-delay-100 {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 100ms;
+  }
+
+  .animate-fade-in-delay-200 {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 200ms;
+  }
+
+  .animate-fade-in-delay-300 {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 300ms;
+  }
+
+  .animate-fade-in-delay-400 {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 400ms;
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  /* Transitions */
+  .transition-colors {
+    @apply transition-colors duration-300;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full hover:bg-gray-400 dark:hover:bg-gray-600;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-prose {
+    all: revert;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+}
+
+/* Smooth transitions for theme switching */
+html {
+  transition: background-color 300ms ease, color 300ms ease;
 }
