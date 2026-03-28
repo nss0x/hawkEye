@@ -52,9 +52,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="HawkEye Logo"
-                width={120}
-                height={36}
-                className="h-9 w-auto"
+                width={180}
+                height={54}
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
