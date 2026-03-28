@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Code, Share2, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -48,9 +49,13 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">H</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="HawkEye Logo"
+                width={32}
+                height={32}
+                className="h-8 w-auto"
+              />
               <span className="text-lg font-bold text-gray-900 dark:text-white">
                 HawkEye
               </span>
