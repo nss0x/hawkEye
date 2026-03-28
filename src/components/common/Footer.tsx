@@ -52,13 +52,10 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="HawkEye Logo"
-                width={32}
-                height={32}
-                className="h-8 w-auto"
+                width={120}
+                height={36}
+                className="h-9 w-auto"
               />
-              <span className="text-lg font-bold text-gray-900 dark:text-white">
-                HawkEye
-              </span>
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
               AI-powered intelligent surveillance for a safer world.

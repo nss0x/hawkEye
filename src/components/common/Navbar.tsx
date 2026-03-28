@@ -43,10 +43,10 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="HawkEye Logo"
-              width={40}
-              height={40}
+              width={160}
+              height={48}
               priority
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 
